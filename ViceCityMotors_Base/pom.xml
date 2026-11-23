@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cl.duoc</groupId>
+    <artifactId>vicecitymotors-mysql</artifactId>
+    <version>1.0.0</version>
+
+    <!-- Java 21 es el JDK utilizado en las clases. -->
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <!-- Componentes de interfaz: botones, campos, listas. -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>21.0.6</version>
+        </dependency>
+
+        <!-- Carga de vistas y eventos desde archivos FXML. -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>21.0.6</version>
+        </dependency>
+
+        <!-- ============================================================
+             EP3 · MISIÓN 4: agrega AQUÍ la dependencia del conector JDBC
+             de MySQL (mysql-connector-j) y luego recarga el proyecto Maven.
+             ============================================================ -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin de compilación de código Java. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+
+            <!-- Permite iniciar JavaFX con: mvn javafx:run -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.8</version>
+                <configuration>
+                    <mainClass>cl.duoc.vicecity.App</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

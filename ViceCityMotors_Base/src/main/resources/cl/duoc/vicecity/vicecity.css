@@ -1,0 +1,56 @@
+/* =========================================================
+   VICE CITY MOTORS · Hoja de estilos neón (GTA VI)
+   ENTREGADA POR EL DOCENTE: no debes modificarla.
+   Clases disponibles para tu FXML: titulo, subtitulo, mensaje
+   ========================================================= */
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #12051f 0%, #3a0d52 55%, #b3175f 100%);
+    -fx-font-family: "Arial";
+    -fx-font-size: 13px;
+}
+.label { -fx-text-fill: #ffffff; }
+.titulo {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffd166;
+    -fx-effect: dropshadow(gaussian, #ff3d8b, 14, 0.55, 0, 0);
+}
+.subtitulo { -fx-text-fill: #7df9ff; -fx-font-size: 13px; }
+.mensaje {
+    -fx-text-fill: #7df9ff;
+    -fx-font-weight: bold;
+    -fx-padding: 8 12;
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+    -fx-background-radius: 8;
+}
+.button {
+    -fx-background-color: linear-gradient(#ff5aa5, #d61f69);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 8 20;
+    -fx-cursor: hand;
+}
+.button:hover {
+    -fx-background-color: linear-gradient(#ffd166, #ff8a3d);
+    -fx-text-fill: #12051f;
+}
+.text-field, .combo-box {
+    -fx-background-color: rgba(255, 255, 255, 0.94);
+    -fx-background-radius: 8;
+}
+.list-view {
+    -fx-background-color: rgba(8, 3, 20, 0.78);
+    -fx-background-radius: 10;
+    -fx-border-color: #7df9ff;
+    -fx-border-radius: 10;
+}
+.list-view .list-cell { -fx-background-color: transparent; -fx-text-fill: #ffffff; -fx-padding: 8 12; }
+.list-view .list-cell:filled:hover { -fx-background-color: rgba(125, 249, 255, 0.18); }
+.list-view .list-cell:filled:selected { -fx-background-color: #ff3d8b; -fx-text-fill: #ffffff; }
+.combo-box .list-cell { -fx-background-color: transparent; -fx-text-fill: #12051f; -fx-padding: 4 8; }
+.combo-box .arrow-button { -fx-background-color: transparent; }
+.combo-box .arrow { -fx-background-color: #d61f69; }
+.combo-box-popup .list-view { -fx-background-color: #ffffff; -fx-border-color: #ff3d8b; }
+.combo-box-popup .list-view .list-cell { -fx-text-fill: #12051f; }
+.combo-box-popup .list-view .list-cell:filled:hover { -fx-background-color: #ffd166; }

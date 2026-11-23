@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- Archivo de la vista: dibuja controles; la lógica está en VehiculoController. -->
+<VBox spacing="12"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="cl.duoc.vicecity.controller.VehiculoController">
+
+    <!-- Deja un margen interior de 20 píxeles en todos los lados. -->
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- Título y subtítulo (clases definidas en vicecity.css). -->
+    <Label text="VICE CITY MOTORS" styleClass="titulo"/>
+    <Label text="Concesionario de Leonida - Inventario de vehículos" styleClass="subtitulo"/>
+
+    <!-- Formulario: cada fx:id coincide con el campo del Controller. -->
+    <HBox spacing="10">
+        <ComboBox fx:id="tipo" promptText="Tipo" prefWidth="150"/>
+        <TextField fx:id="codigo" promptText="Código (VC-001)" prefWidth="140"/>
+        <TextField fx:id="nombre" promptText="Nombre del vehículo" prefWidth="300"/>
+        <TextField fx:id="precio" promptText="Precio base" prefWidth="150"/>
+    </HBox>
+
+    <!-- Cada onAction llama al método con ese nombre en el Controller. -->
+    <HBox spacing="10">
+        <Button text="Guardar" onAction="#guardar"/>
+        <Button text="Eliminar" onAction="#eliminar"/>
+        <Button text="Limpiar" onAction="#limpiar"/>
+    </HBox>
+
+    <!-- La lista muestra cada objeto usando su método toString(). -->
+    <!-- Al hacer clic, #seleccionar copia la fila al formulario. -->
+    <ListView fx:id="lista" onMouseClicked="#seleccionar" VBox.vgrow="ALWAYS"/>
+
+    <!-- Texto que informa los resultados de las operaciones. -->
+    <Label fx:id="mensaje" text="Bienvenido a Vice City Motors" wrapText="true" styleClass="mensaje"/>
+</VBox>

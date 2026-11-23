@@ -1,0 +1,16 @@
+# ==========================================================
+#  SOLO DOCENTE: soluciones (NO subir)
+# ==========================================================
+ViceCityMotors_Final/
+ViceCityMotors_Final_Parte2/
+ViceCityMotors_Final*.zip
+LEEME_DOCENTE.txt
+
+# ==========================================================
+#  Archivos generados / del sistema
+# ==========================================================
+.DS_Store
+**/target/
+*.class
+**/.idea/workspace.xml
+**/.idea/shelf/

@@ -1,0 +1,43 @@
+VICE CITY MOTORS - GTA VI · DSY1102 EP3 · PROYECTO BASE
+========================================================
+Java 21 + JavaFX + Maven + MySQL (XAMPP o Laragon)
+
+A. LO QUE YA VIENE HECHO (NO MODIFICAR)
+   pom.xml (salvo el bloque marcado EP3)       -> Dependencias y ejecución.
+   scripts/vicecity.sql                        -> Base de datos y tabla vehiculos.
+   src/main/java/cl/duoc/vicecity/App.java     -> Inicio de JavaFX + estilo neón.
+   src/main/java/cl/duoc/vicecity/model/Vehiculo.java          -> Clase padre abstracta.
+   src/main/java/cl/duoc/vicecity/model/VehiculoTerrestre.java -> Regla: +$10.000.
+   src/main/java/cl/duoc/vicecity/model/VehiculoAcuatico.java  -> Regla: -20 %.
+   src/main/resources/cl/duoc/vicecity/vicecity.css            -> Estilos (titulo, subtitulo, mensaje).
+   src/main/resources/cl/duoc/vicecity/main-view.fxml          -> La ventana (interfaz) ya armada.
+        fx:id: tipo, codigo, nombre, precio, lista, mensaje
+        eventos: #guardar, #eliminar, #limpiar, #seleccionar
+
+B. LO QUE DEBES CONSTRUIR TÚ
+   1. pom.xml        -> dependencia mysql-connector-j (donde indica el comentario EP3).
+   2. config/Conexion.java                  -> datos de conexión y método abrir().
+   3. dao/VehiculoMySQLDAO.java             -> listar(), guardar(Vehiculo), eliminar(int).
+   4. controller/VehiculoController.java    -> eventos de la ventana (sin SQL).
+   (La vista main-view.fxml YA VIENE HECHA: tu Controller debe usar sus fx:id y eventos.)
+   Referencia permitida: proyecto PuertoGames visto en clases.
+
+C. TABLA vehiculos
+   id (INT, auto), codigo (VARCHAR 20, único), nombre (VARCHAR 100),
+   precio_base (INT > 0), tipo ENUM('TERRESTRE','ACUATICO').
+
+D. ABRIR Y EJECUTAR EN INTELLIJ IDEA
+   File > Open > carpeta ViceCityMotors_Base (contiene .idea y pom.xml) > Trust Project.
+   Si pide SDK: File > Project Structure > Project SDK = JDK 21.
+   Ejecutar: botón ▶ "Vice City Motors (javafx:run)" arriba a la derecha
+   (o Maven > Plugins > javafx > javafx:run, o: mvn clean javafx:run)
+   Mientras no exista VehiculoController verás ClassNotFoundException: es normal.
+
+E. ERRORES FRECUENTES
+   * Communications link failure: MySQL apagado o puerto distinto de 3306.
+   * Access denied: revisa usuario/contraseña en Conexion.java.
+   * Unknown database 'vicecity': ejecuta scripts/vicecity.sql.
+   * No suitable driver: falta la dependencia mysql-connector-j o no recargaste Maven.
+   * Duplicate entry: ya existe un vehículo con ese código.
+   * Location is not set: moviste o renombraste main-view.fxml (debe estar en resources/cl/duoc/vicecity).
+   * ClassNotFoundException del controller: revisa fx:controller en el FXML.
